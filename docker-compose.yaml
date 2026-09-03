@@ -1,0 +1,14 @@
+services:
+  PYTHON_ML:
+    container_name: PYTHON_ML
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: python_ml:latest
+    ports:
+      - "8888:8888"
+    # To keep the container running and allow interactive sessions:
+    # Not really needed since I'll be running Jupyter Notebook.
+    # stdin_open: true
+    volumes:
+      - ./:/PYTHON_ML
